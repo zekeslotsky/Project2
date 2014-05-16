@@ -1,0 +1,5 @@
+ <h1> <%= @microbrewery.name %> </h1>
+
+    <p>This Microbrewery is a <%= @microbrewery.style %> style from <%= @microbrewery.city %>, and we can take <%= @microbrewery.transit %> to get there.</p>
+
+    <%= link_to "Back to the list!", microbreweries_path %>

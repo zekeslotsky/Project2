@@ -1,0 +1,20 @@
+<h1> Add a new Microbrewery! </h1>
+
+    <%= form_for @microbrewery do |f| %><br>
+        Name: <%= f.text_field :name %><br>
+        Address: <%= f.text_field :address %><br>
+        City: <%= f.text_field :city %><br>
+        Zip: <%= f.text_field :zip %><br>
+        Transit: <%= f.text_field :transit %><br>
+        Direction: <%= f.text_field :direction %><br>
+        Style: <%= f.text_field :style %><br>
+        Beer1: <%= f.text_field :beer1 %><br>
+        Beer2: <%= f.text_field :beer2 %><br>
+        Beer3: <%= f.text_field :beer3 %><br>
+        Generic_growlers: <%= f.text_field :generic_growlers %><br><br>
+
+        <%= f.submit "Add Microbrewery!" %>
+
+    <% end %><br><br>
+
+    <%= link_to "Back to the list!", microbreweries_path %>

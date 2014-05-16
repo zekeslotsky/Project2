@@ -1,0 +1,8 @@
+<h1>LA Metro to Microbreweries</h1>
+    <ul>
+        <% @microbreweries.each do |m| %>
+            <li>
+                <strong> <%= m.name %> </strong> -- <%= m.direction %>
+            </li>
+        <% end %>
+    </ul>
