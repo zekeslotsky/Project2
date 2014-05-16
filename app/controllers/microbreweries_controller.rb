@@ -36,7 +36,7 @@ before_action :set_microbrewery, only: [:edit,:update, :show]
     end
 
     def destroy
-#    	@microbrewery = Microbrewery.find(params[:id])
+#?    	@microbrewery = Microbrewery.find(params[:id])
     	@microbrewery.destroy
     	redirect_to props_path
     end
