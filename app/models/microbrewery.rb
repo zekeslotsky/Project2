@@ -12,5 +12,7 @@ class Microbrewery
   field :beer3, type: String
   field :generic_growlers, type: Mongoid::Boolean
 
-  validates :name, presence: :true, messsage: “Please enter a Microbrewery name!”
+  validates :name, presence: :true, notice: “Please enter a Microbrewery name!”
+  validates_length_of :zip, maximum: 5 notice: “Please enter a 5 digit zip code”
+  validates_numericality_of :zip, type: Integer notice: “Please enter a numberical zip code”
 end

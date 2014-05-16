@@ -1,8 +1,13 @@
 <h1>LA Metro to Microbreweries</h1>
     <ul>
-        <% @microbreweries.each do |m| %>
+    	<% @microbreweries.each do |m| %>
+    	<div class="row">
+    		<div class ="col-md-3"
+        
             <li>
                 <strong> <%= m.name %> </strong> -- <%= m.direction %>
             </li>
+            </div>
+           </div>
         <% end %>
     </ul>
