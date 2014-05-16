@@ -2,12 +2,17 @@
     <ul>
     	<% @microbreweries.each do |m| %>
     	<div class="row">
-    		<div class ="col-md-3"
+    		<%= link_to(microbrewery_path(m)) do %>
+    		<div class ="col-md-3 border">
         
             <li>
                 <strong> <%= m.name %> </strong> -- <%= m.direction %>
             </li>
+
             </div>
-           </div>
+          </div>
         <% end %>
+       <% end %>
     </ul>
+
+    <%= link_to new_microbreweries_path %>
