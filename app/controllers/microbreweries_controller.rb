@@ -14,7 +14,7 @@ before_action :set_microbrewery, only: [:edit,:update, :show]
 	end
 
     def create
-		    @microbrewery = Bean.new(microbrewery_params)
+		    @microbrewery = Microbrewery.new(microbrewery_params)
 	    if @microbrewery.save
 	        redirect_to microbreweries_path
 	    else
@@ -29,18 +29,27 @@ before_action :set_microbrewery, only: [:edit,:update, :show]
     def update
     	@microbrewery= Microbrewery.find(params[:id])
     	if @microbrewery.update(microbrewery_params)
-    		redirect_to microbrewery_path(@prop)
+    		redirect_to microbrewery_path(@microbrewery)
     	else
     		render 'edit'
     	end
     end
 
     def destroy
-#?    	@microbrewery = Microbrewery.find(params[:id])
+    	@microbrewery = Microbrewery.find(params[:id])
     	@microbrewery.destroy
-    	redirect_to props_path
+    	redirect_to microbreweries_path
     end
 
-Private add in this shit for microbrewery_params
+private
+
+	def microbrewery_params
+		params.require(:microbrewery).permit(:name, :address, :city, :zip, :transit, :direction, :style, :beer1, :beer2, :beer3, :generic_growlers)
+	end
+
+	def set_microbrewery
+		@microbrewery = Microbrewery.find(params[:id])
+	end
+
 
 end

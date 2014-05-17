@@ -13,6 +13,5 @@ class Microbrewery
   field :generic_growlers, type: Mongoid::Boolean
 
   validates :name, presence: :true
-  validates_length_of :zip, maximum: 5 
   validates_numericality_of :zip, type: Integer 
 end

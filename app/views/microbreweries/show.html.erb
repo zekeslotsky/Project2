@@ -1,10 +1,22 @@
  <h1> <%= @microbrewery.name %> </h1>
 <div class = "row">
     <p>This Microbrewery is a <%= @microbrewery.style %> style from <%= @microbrewery.city %>, and we can take <%= @microbrewery.transit %> to get there.</p>
+    <h3>If you're going the best transit is:</h3>
+    <h4><%= @microbrewery.transit %> !!!</h4><br>
+    	Address: <%= @microbrewery.address %><br>
+        City: <%= @microbrewery.city %><br>
+        Zip: <%= @microbrewery.zip %><br><br>
+       
+        Direction: <%= @microbrewery.direction %><br>
+        Style: <%= @microbrewery.style %><br>
+        Beer1: <%= @microbrewery.beer1 %><br>
+        Beer2: <%= @microbrewery.beer2 %><br>
+        Beer3: <%= @microbrewery.beer3 %><br>
+        Do they allow Generic Growlers?: <%= @microbrewery.generic_growlers %><br>
 
     <%= link_to "Back to the list!", microbreweries_path %>
-     <%= link_to "Edit", edit_microbreweries_path %>
+     <%= link_to "Edit", edit_microbrewery_path %>
      <%= link_to "", @microbrewery, {method: :delete, data: {confirm: 'Are you sure you want to delete it?' }, class: "glyphicon glyphicon-trash"} %>
 
-    
+
     </div>
