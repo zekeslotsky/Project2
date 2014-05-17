@@ -1,5 +1,4 @@
 require 'bcrypt'
-
 class User
   include Mongoid::Document
   field :name, type: String
@@ -7,7 +6,7 @@ class User
   field :password_digest, type: String
 
   validates :email, :name, uniqueness: :true, presence: :true
-  validates :password, numericality: :true
+  
 
   def password
   	@password
