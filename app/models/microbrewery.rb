@@ -3,7 +3,7 @@ class Microbrewery
   field :name, type: String
   field :address, type: String
   field :city, type: String
-  field :zip, type: Float
+  field :zip, type: String
   field :transit, type: String
   field :direction, type: String
   field :style, type: String

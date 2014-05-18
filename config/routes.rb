@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions
   resources :users, only: [:new, :create]
   resources :microbreweries
   root 'microbreweries#index'
