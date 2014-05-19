@@ -13,7 +13,7 @@
  <h1> <%= @microbrewery.name %> </h1>
 <div class = "container">
 <div class = "row">
-    <p>This Microbrewery is a <%= @microbrewery.style %> style from <%= @microbrewery.city %>, and we can take <%= @microbrewery.transit %> to get there.</p>
+    <p style="color:gold;">This Microbrewery is a <%= @microbrewery.style %> style from <%= @microbrewery.city %>, and we can take <%= @microbrewery.transit %> to get there.</p>
     <h3>If you're going the best transit is:</h3>
     <h4><%= @microbrewery.transit %> !!!</h4><br>
     	Address: <%= @microbrewery.address %><br>
@@ -27,7 +27,7 @@
         Beer3: <%= @microbrewery.beer3 %><br>
         Do they allow Generic Growlers?: <%= @microbrewery.generic_growlers %><br>
 
-    <%= link_to "Back to the list!", microbreweries_path %>
+    <h4><%= link_to "Back to the list of microbreweries!", microbreweries_path %></h4>
      <%= link_to "Edit", edit_microbrewery_path %>
      <%= link_to "", @microbrewery, {method: :delete, data: {confirm: 'Are you sure you want to delete it?' }, class: "glyphicon glyphicon-trash"} %>
 
@@ -38,7 +38,7 @@
 
  <div class="container">
   
-   <br><h2>Map of Breweries</h2>
+   <br><h2>Map to this brewery</h2>
    <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -53,8 +53,8 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
 
 function calcRoute() {
-  var origin      = new google.maps.LatLng(41.850033, -87.6500523);
-  var destination = new google.maps.LatLng(41.950033, -87.6500523);
+  var origin      = new google.maps.LatLng('1520 2nd Street, Santa Monica, 90401');
+  var destination = new google.maps.LatLng(' <%= @microbrewery.address %>, <%= @microbrewery.zip %>');
   var request = {
       origin:      origin,
       destination: destination,
@@ -134,9 +134,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
 
-    <div id="map-canvas" style="float:left;width:70%; height:100%">
+    <table>
+      <tr>
+        <td id="map-canvas">
+    <div  style="display:inline;float:left;width:10%; height:100%">
     </div>
-    <div id="directionsPanel" style="float:right;width:30%;height 100%">
+        </td>
+        <td>
+
+    <div id="directionsPanel" style="display:inline-block;width:30%;height 100%;background-color:gold;">
+        </td>
+      </tr>
+    </table>
     
     </div>
  </div>

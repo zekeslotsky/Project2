@@ -1,4 +1,9 @@
-<h1>LA Metro to Microbreweries</h1>
+
+
+<h1>Take Public Transit to Microbreweries 
+    <br>starting from General Assembly!</h1>
+    <div class="container"
+
     
     <ul>
     	<% @microbreweries.each do |m| %>
@@ -7,16 +12,22 @@
     		 
         
             <li>
+                <h2>
                 <strong> <%= m.name %> </strong> -- <%= m.direction %>
+                </h2>
             </li>
 
-             
+
+
            
         <% end %>
        <% end %>
     </ul>
 
+
+
     <%= link_to "Add a Microbrewery!", new_microbrewery_path %>
+</div>
 
 
     
